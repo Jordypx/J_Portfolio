@@ -1,5 +1,6 @@
 ---
 import { projects } from "../constants";
+import { github } from "../assets";
 
 ---
 
@@ -27,7 +28,7 @@ import { projects } from "../constants";
         
           <div class="image-overlay">
             <div class="icon" onclick={`window.open('${project.source_code_link}', '_blank')`}>
-              <img src="src/assets/github.png" alt="Source Code" />
+              <img src={github.src} alt="Source Code" />
             </div>
           </div>
         </div>
