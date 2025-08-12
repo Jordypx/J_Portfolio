@@ -1,4 +1,15 @@
-import { mobile, backend, web } from "../assets";
+import {
+  mobile,
+  backend,
+  web,
+  audiophile,
+  arch,
+  dinner,
+  Designo,
+  github,
+  photosnap,
+  scoot,
+} from "../assets";
 
 export const navLinks = [
   {
@@ -49,7 +60,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "src/assets/audiophile.png",
+    image: audiophile,
     source_code_link: "https://github.com/Jordypx/Audiophile_webpage",
     site_url: "https://audiophile-ecommerce-mbart13.vercel.app/",
   },
@@ -71,7 +82,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "src/assets/photosnap.png",
+    image: photosnap,
     source_code_link: "https://github.com/Jordypx/photosnapWeb",
     site_url: "https://photosnap-web-gold.vercel.app",
   },
@@ -93,7 +104,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "src/assets/scoot.png",
+    image: scoot,
     source_code_link: "https://github.com/Jordypx/scoot-website",
     site_url: "https://scoot-website-delta.vercel.app",
   },
@@ -115,7 +126,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "src/assets/dinner.png",
+    image: dinner,
     source_code_link: "https://github.com/Jordypx/dinner",
     site_url: "https://dinner-sand.vercel.app",
   },
@@ -137,7 +148,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "src/assets/arch.png",
+    image: arch,
     source_code_link: "https://github.com/Jordypx/Arch",
     site_url: "https://archive-ebon.vercel.app",
   },
@@ -159,10 +170,10 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "src/assets/designo.png",
+    image: Designo,
     source_code_link: "https://github.com/Jordypx/designo_page",
     site_url: "https://designo-page.vercel.app",
   },
 ];
 
-export { services, projects };
+export { services, projects, github };
