@@ -1,0 +1,146 @@
+---
+import { services } from "../constants";
+---
+
+
+<section id="about" class="about-section">
+  <div class="intro-text">
+    <p class="section-subtext">Introduction</p>
+    <h2 class="section-headtext">Overview.</h2>
+  </div>
+
+  <p class="description">
+    I am a skilled software developer with experience in TypeScript and JavaScript,
+    and expertise in frameworks like React, Node.js, and Three.js.
+    I am a quick learner and collaborate closely with clients to
+    create efficient, scalable, and user-friendly solutions.
+  </p>
+
+  <div class="services-container">
+    {services.map((service) => (
+      <div class="service-card shadow-card green-pink-gradient" data-tilt>
+        <div class="service-inner">
+          <img src={service.icon.src} alt={service.title} class="service-icon" />
+          <h3 class="service-title">{service.title}</h3>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .about-section {
+    padding: 4rem 1rem;
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  .section-subtext {
+    color: #999;
+    font-size: 1rem;
+  }
+
+  .section-headtext {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    color: #ccc;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 700px;
+  }
+
+  .services-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .service-card {
+    /* background: linear-gradient(135deg, #00ffcc, #ff00cc); */
+    padding: 1.5px;
+    border-radius: 20px;
+    transition: transform 0.1s ease;
+    perspective: 1000px;
+    width: 250px;
+     will-change: transform;
+     user-select: none;
+  }
+
+   /* Smooth animation for tilt + zoom */
+  .service-card:hover {
+    transition: transform 0.1s ease-in-out;
+  }
+
+  .service-inner {
+    background: #151030;
+    border-radius: 20px;
+    padding: 2rem;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .service-icon {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+  }
+
+  .service-title {
+    color: white;
+    font-size: 1.25rem;
+    text-align: center;
+    font-weight: 600;
+  }
+
+   /* Mobile adjustments */
+  @media (max-width: 500px) {
+    .section-headtext {
+      font-size: 1.5rem;
+    }
+    .description {
+      font-size: 1rem;
+    }
+
+    .services-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .service-card {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+</style>
+
+
+<script>
+  // Vanilla Tilt Effect
+  document.querySelectorAll("[data-tilt]").forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const event = e as MouseEvent;
+      const rect = card.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * 20;
+      const rotateY = ((x - centerX) / centerX) * 20;
+      (card as HTMLElement).style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      (card as HTMLElement).style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
+    });
+  });
+</script>

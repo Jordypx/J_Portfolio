@@ -1,0 +1,142 @@
+
+<nav id="navbar" class="w-full flex items-center p-6 fixed top-0 z-20 m-0"> 
+
+    <div class="container mx-auto flex justify-between items-center gap-10  ">
+        <a href="/" class="flex items-center gap-2" id="logoLink">
+          <img src="src/assets/JO.png" alt='logo' class='w-9 h-9 object-contain' />
+          <p class='text-white text-[18px] font-bold cursor-pointer flex '>
+            Jordan &nbsp;
+            <span class='sm:block hidden md:block'> | Web Designer</span>
+          </p>
+        </a>
+
+    <ul id="navLinks" class="list-none hidden sm:flex flex-row gap-10">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+
+      <!-- Mobile Menu Toggle -->
+    <div class="sm:hidden flex flex-1 justify-end items-center">
+      <img id="menuToggle" src="src/assets/menu.svg" alt="menu" class="w-[28px] h-[28px] object-contain cursor-pointer" />
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden p-6 absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl bg-primary">
+        <ul class="list-none flex justify-end items-start flex-col gap-4">
+          <li><a href="#about" class="mobile-link">About</a></li>
+          <li><a href="#projects" class="mobile-link">Projects</a></li>
+          <li><a href="#contact" class="mobile-link">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+      
+       
+    </div>
+</nav>
+
+<style>
+    /* Basic reset */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+}
+
+nav {
+  transition: background-color 0.3s ease-in-out;
+}
+
+.bg-primary {
+  background-color: #050816; /* adjust to match your portfolio */
+}
+
+.nav-link,
+.mobile-link {
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link:hover,
+.mobile-link:hover {
+  color: white;
+}
+
+.nav-link.active,
+.mobile-link.active {
+  color: white;
+}
+
+.bg-black {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .sm\\:hidden {
+    display: flex !important;
+  }
+  .sm\\:flex {
+    display: none !important;
+  }
+}
+
+</style>
+
+
+<script>
+    // Scroll background change
+const navbar = document.getElementById("navbar");
+window.addEventListener("scroll", () => {
+  if (!navbar) return;
+  if (window.scrollY > 100) {
+    navbar.classList.add("bg-primary");
+  } else {
+    navbar.classList.remove("bg-primary");
+  }
+});
+
+// Menu toggle
+const menuToggle = document.getElementById("menuToggle");
+const mobileMenu = document.getElementById("mobileMenu");
+let isMenuOpen = false;
+
+if (menuToggle) {
+  menuToggle.addEventListener("click", () => {
+    isMenuOpen = !isMenuOpen;
+    if (mobileMenu) {
+      mobileMenu.classList.toggle("hidden", !isMenuOpen);
+    }
+    (menuToggle as HTMLImageElement).src = isMenuOpen ? "src/assets/close.svg" : "src/assets/menu.svg";
+  });
+}
+
+// Active link highlight
+const navLinks = document.querySelectorAll(".nav-link");
+const mobileLinks = document.querySelectorAll(".mobile-link");
+
+function setActiveLink(linkElements: NodeListOf<Element>, clickedLink: Element) {
+  linkElements.forEach((link: Element) => link.classList.remove("active"));
+  clickedLink.classList.add("active");
+}
+
+navLinks.forEach(link => {
+  link.addEventListener("click", () => setActiveLink(navLinks, link));
+});
+
+mobileLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    setActiveLink(mobileLinks, link);
+    if (mobileMenu) {
+      mobileMenu.classList.add("hidden");
+    }
+    isMenuOpen = false;
+    if (menuToggle) {
+      (menuToggle as HTMLImageElement).src = "src/assets/menu.svg";
+    }
+  });
+});
+
+</script>

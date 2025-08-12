@@ -1,0 +1,158 @@
+---
+
+
+// const socials = [
+//   { name: "Upwork", icon: "https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/external-upwork-a-global-freelancing-platform-where-professionals-connect-and-collaborate-remotely-logo-shadow-tal-revivo.png", url: "https://github.com/yourusername" }, 
+//   { name: "Instagram", icon: "https://img.icons8.com/3d-fluency/94/instagram-logo.png", url: "https://linkedin.com/in/yourusername" },
+//     { name: "Facebook", icon: "https://img.icons8.com/3d-fluency/94/facebook-logo.png", url: "https://twitter.com/yourusername" },
+//   { name: "Twitter", icon: "https://img.icons8.com/ios-filled/50/twitterx--v1.png", url: "https://twitter.com/yourusername" },
+// ];
+---
+
+<section class="contact-cta" id="contact">
+  <h2>Let's Build Something Great <span class="">Together</span></h2>
+  <p>Whether you have a project in mind or just want to say hi, I’m just a click away.</p>
+
+  <!-- Email Button -->
+<button id="open-gmail" class="email-btn">
+      Get In Touch
+    </button>
+
+  <!-- Social Links -->
+  <div class="social-links">
+   <a href="https://www.instagram.com/thedeveloper_jo/" target="_blank" rel="noopener noreferrer">
+    <img src="https://api.iconify.design/mdi:instagram.svg" alt="Instagram" width="28" height="28" />
+  </a>
+  <a href="https://www.upwork.com/freelancers/~014973e8572b27ec14?mp_source=share" target="_blank" rel="noopener noreferrer">
+    <img src="https://api.iconify.design/simple-icons:upwork.svg" alt="Upwork" width="28" height="28" />
+  </a>
+  <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
+    <img src="https://api.iconify.design/mdi:twitter.svg" alt="Twitter" width="28" height="28" />
+  </a>
+  <a href="https://web.facebook.com/profile.php?id=61575556113678" target="_blank" rel="noopener noreferrer">
+    <img src="https://api.iconify.design/mdi:facebook.svg" alt="Facebook" width="28" height="28" />
+  </a>
+  </div>
+</section>
+
+<style>
+  .contact-cta {
+    text-align: center;
+    padding: 4rem 1rem;
+  background-color: var(--primary);
+    color: white;
+    border-radius: 1rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    margin-bottom: 2rem;
+  }
+
+  .email-btn {
+     background: #915EFF; 
+    /* background: linear-gradient(to right, #38bdf8, #11998e); */
+   color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 999px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .email-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(56, 191, 248, 0.218);
+  }
+
+
+   .social-links {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  flex-wrap: wrap; /* in case of smaller screens */
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border-radius: 50%;
+  padding: 0.7rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Icon styling */
+.social-links a img {
+  width: 26px;
+  height: 26px;
+  filter: brightness(0) invert(1); /* makes icons white for base state */
+  transition: filter 0.3s ease;
+}
+
+/* Universal hover scale and shadow */
+.social-links a:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Mobile responsive tweaks */
+@media (max-width: 600px) {
+  .social-links {
+    gap: 0.8rem;
+  }
+  .social-links a {
+    padding: 0.5rem;
+  }
+  .social-links a img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+ @media (max-width: 680px) {
+    h2 { font-size: 1.5rem; }
+    p { font-size: 0.9rem; }
+  } 
+
+</style>
+
+ <script is:inline>
+    function openGmail(email, subject = "", body = "") {
+      const url =
+        "https://mail.google.com/mail/?view=cm&fs=1"
+        + "&to=" + encodeURIComponent(email)
+        + "&su=" + encodeURIComponent(subject)
+        + "&body=" + encodeURIComponent(body);
+
+      // Try opening Gmail in a new tab
+      const win = window.open(url, "_blank", "noopener,noreferrer");
+      if (!win) {
+        // Popup blocked — fallback to mailto
+        window.location.href =
+          `mailto:${encodeURIComponent(email)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      }
+    }
+
+    document.getElementById("open-gmail").addEventListener("click", () => {
+      openGmail(
+        "jordydev56@gmail.com",
+        "New project inquiry"
+      );
+    });
+  </script>

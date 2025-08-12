@@ -1,0 +1,27 @@
+---
+import { styles } from "../style";
+ import '../styles/global.css'
+---
+
+
+<section class="relative w-full h-screen mx-auto bg-hero-pattern ">
+      <div
+        class={`absolute inset-0 top-[160px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
+      >
+        <div class="flex flex-col justify-center items-center mt-10">
+          <div class="w-5 h-5 rounded-full bg-[#915EFF]" />
+          <div class="w-1 sm:h-60 h-40 violet-gradient" />
+        </div>
+
+        <div class="mt-16">
+          <h1 class={`${styles.heroHeadText} text-white`}>
+            Hi, I&apos;m <span class="text-[#915EFF]">Jordan</span>
+          </h1>
+          <p class={`${styles.heroSubText} mt-2 text-white-100 font-medium`}>
+            I design websites that are not just visually striking but built to
+            grow your business. Let's turn ideas into powerful digital
+            experiences. <br class="sm:block hidden" />
+          </p>
+        </div>
+      </div>
+    </section>
