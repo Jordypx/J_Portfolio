@@ -1,15 +1,24 @@
-import {
-  mobile,
-  backend,
-  web,
-  audiophile,
-  arch,
-  dinner,
-  Designo,
-  github,
-  photosnap,
-  scoot,
-} from "../assets";
+// import {
+//   mobile,
+//   backend,
+//   web,
+//   audiophile,
+//   arch,
+//   dinner,
+//   Designo,
+//   github,
+//   photosnap,
+//   scoot,
+// } from "../assets";
+import photosnap from "../assets/photosnap.png";
+import scoot from "../assets/scoot.png";
+import audiophile from "../assets/audiophile.png";
+import dinner from "../assets/dinner.png";
+import arch from "../assets/arch.png";
+import Designo from "../assets/Designo.png";
+import web from "../assets/web.png";
+import mobile from "../assets/mobile.png";
+import backend from "../assets/backend.png";
 
 export const navLinks = [
   {
@@ -176,4 +185,4 @@ const projects = [
   },
 ];
 
-export { services, projects, github };
+export { services, projects };
