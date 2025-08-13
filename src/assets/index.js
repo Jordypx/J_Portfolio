@@ -7,7 +7,7 @@ import menu from "./menu.svg";
 import close from "./close.svg";
 import arch from "./arch.png";
 import dinner from "./dinner.png";
-import Designo from "./designo.png";
+import Designo from "./Designo.png";
 import photosnap from "./photosnap.png";
 import scoot from "./scoot.png";
 import audiophile from "./audiophile.png";
