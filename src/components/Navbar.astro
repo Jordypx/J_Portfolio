@@ -18,7 +18,7 @@
 
       <!-- Mobile Menu Toggle -->
     <div class="sm:hidden flex flex-1 justify-end items-center">
-      <img id="menuToggle" src="src/assets/menu.svg" alt="menu" class="w-[28px] h-[28px] object-contain cursor-pointer" />
+      <img id="menuToggle" src="./menu.svg" alt="menu" class="w-[28px] h-[28px] object-contain cursor-pointer" />
 
       <!-- Mobile Menu -->
       <div id="mobileMenu" class="hidden p-6 absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl bg-primary">
@@ -109,7 +109,7 @@ if (menuToggle) {
     if (mobileMenu) {
       mobileMenu.classList.toggle("hidden", !isMenuOpen);
     }
-    (menuToggle as HTMLImageElement).src = isMenuOpen ? "src/assets/close.svg" : "src/assets/menu.svg";
+    (menuToggle as HTMLImageElement).src = isMenuOpen ? "../close.svg" : "../menu.svg";
   });
 }
 
@@ -134,7 +134,7 @@ mobileLinks.forEach(link => {
     }
     isMenuOpen = false;
     if (menuToggle) {
-      (menuToggle as HTMLImageElement).src = "src/assets/menu.svg";
+      (menuToggle as HTMLImageElement).src = "../menu.svg";
     }
   });
 });
